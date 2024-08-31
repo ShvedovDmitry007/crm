@@ -1,0 +1,61 @@
+:root {
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  --white: #ffffff;
+  --smoky-white: #eeeeee;
+  --phantom-white: #f4f2ff;
+  --slate-blue: #6d5bd0;
+  --purple-blue: #6e6893;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #6e6893;
+  background-color: #f2f0f9;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+h1,
+h2,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
