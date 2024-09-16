@@ -202,3 +202,9 @@
   display: flex;
   gap: 50px;
 }
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: #6E6893;
+}
