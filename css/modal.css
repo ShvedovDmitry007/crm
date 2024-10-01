@@ -1,8 +1,11 @@
 .overlay {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .overlay_active {
+  opacity: 1;
+  visibility: visible;
   position: fixed;
   display: flex;
   width: 100%;
@@ -12,6 +15,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
+  transition: 0.3s ease-in-out;
   z-index: 2;
 }
 

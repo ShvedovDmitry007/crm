@@ -1,6 +1,7 @@
 // 'use strict';
 import { initialData } from "./data.js";
 import { getPageElements } from "./getPageElements.js";
+import { modalBtn } from "./module/modal.js";
 import { renderGoods } from "./module/renderGoods.js";
 import { totalTablePrice } from "./module/totalTablePrice.js";
 
@@ -10,6 +11,7 @@ const init = () => {
   const output = elements.table;
   totalTablePrice(data);
   renderGoods(output, data);
+  modalBtn(elements.addBtn, elements.modalOverlay, elements.modal, elements.modalClose);
 };
 
 init();

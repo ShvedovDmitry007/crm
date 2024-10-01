@@ -1,7 +1,9 @@
 export const getPageElements = () => {
+  const modal = document.querySelector('.modal');
+  const modalOverlay = document.querySelector('.overlay');
   const modalHeader = document.querySelector('.modal-header__title');
   const modalClose = document.querySelector('.modal-header__close');
-  // Форма
+  // Форма модального окна
   const productName = document.querySelector('.product__input_name');
   const productCategory = document.querySelector('.product__input_category');
   const productUnits = document.querySelector('.product__input_units');
@@ -16,8 +18,11 @@ export const getPageElements = () => {
 
   // Таблица
   const table = document.querySelector('.table__body');
+  const addBtn = document.querySelector('.filter__add-product');
 
   return {
+    modal,
+    modalOverlay,
     modalHeader,
     modalClose,
     productName,
@@ -32,5 +37,6 @@ export const getPageElements = () => {
     btnAddProduct,
     totalPrice,
     table,
+    addBtn,
   }
 }

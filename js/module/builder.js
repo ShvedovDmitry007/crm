@@ -35,7 +35,8 @@ export const createRow = ({id, title, price, category, units, count}) => {
   tableControls.classList.add('table__cell', 'btn-group');
 
 
-  // Кнопки
+  // TODO Разобраться как сделать кнопки в таблице!!!
+  //Кнопки
   const imageBtn = document.createElement('btn');
   imageBtn.classList.add('table__button','table__button_image');
   imageBtn.style.width = "20px";
