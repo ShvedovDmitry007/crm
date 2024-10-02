@@ -31,39 +31,59 @@ export const createRow = ({id, title, price, category, units, count}) => {
   cellTotalPrice.classList.add('table__cell', 'table__cell_total-price');
   cellTotalPrice.innerHTML = `${count * price} ₽`;
 
-  const tableControls = document.createElement('div');
-  tableControls.classList.add('table__cell', 'btn-group');
-
 
   // TODO Разобраться как сделать кнопки в таблице!!!
   //Кнопки
-  const imageBtn = document.createElement('btn');
-  imageBtn.classList.add('table__button','table__button_image');
-  imageBtn.style.width = "20px";
-  imageBtn.style.height = "20px";
-  imageBtn.style.backgroundImage = 'url("/img/sprite.svg#image")';
 
-  // const svgImage = document.createElement('svg');
-  // svgImage.classList.add('icon');
+  const createButtonsGroup = params => {
+    const btnGroup = document.createElement('td');
+    btnGroup.classList.add('table__cell', 'btn-group');
 
-  // const noImage = document.createElement('use');
-  // noImage.setAttributeNS('http://www.w3.org/2000/xlink', 'xlink:href', '.sprite.svg#icon-no-image');
 
-  const editBtn = document.createElement('btn');
-  editBtn.classList.add('table__button','table__button_edit');
-  editBtn.style.width = "20px";
-  editBtn.style.height = "20px";
-  
 
-  const deleteBtn = document.createElement('btn');
-  deleteBtn.classList.add('table__button','table__button_detele');
-  deleteBtn.style.width = "20px";
-  deleteBtn.style.height = "20px";
-  
-  // Добавляем кнопки в div
-  // svgImage.append(noImage);
-  // imageBtn.append(svgImage);
-  tableControls.append(imageBtn, editBtn, deleteBtn);
+    const btns = params.map(({className, type, svgImg}) => {
+
+      // Добавляем элемент <svg>
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('width', '20');
+      svg.setAttribute('height', '20');
+      const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      useElement.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', svgImg);
+      svg.appendChild(useElement);
+
+      const button = document.createElement('button');
+      button.type = type;
+      button.className = className;
+      button.append(svg);
+
+      return button;
+    });
+    
+    btnGroup.append(...btns);
+
+    return {
+      btnGroup,
+      btns,
+    };
+  };
+
+  const buttonGroup = createButtonsGroup([
+    {
+      className: 'table__button',
+      type: 'button',
+      svgImg: '/img/sprite.svg#no-image',
+    },
+    {
+      className: 'table__button',
+      type: 'button',
+      svgImg: '/img/sprite.svg#edit',
+    },
+    {
+      className: 'table__button',
+      type: 'button',
+      svgImg: '/img/sprite.svg#delete',
+    },
+  ]);
 
   row.append(
     cellId,
@@ -73,7 +93,7 @@ export const createRow = ({id, title, price, category, units, count}) => {
     cellCount,
     cellPrice,
     cellTotalPrice,
-    tableControls
+    buttonGroup.btnGroup,
   );
 
   return row;
