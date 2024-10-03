@@ -31,15 +31,11 @@ export const createRow = ({id, title, price, category, units, count}) => {
   cellTotalPrice.classList.add('table__cell', 'table__cell_total-price');
   cellTotalPrice.innerHTML = `${count * price} ₽`;
 
-
-  // TODO Разобраться как сделать кнопки в таблице!!!
   //Кнопки
 
   const createButtonsGroup = params => {
     const btnGroup = document.createElement('td');
     btnGroup.classList.add('table__cell', 'btn-group');
-
-
 
     const btns = params.map(({className, type, svgImg}) => {
 
@@ -49,7 +45,7 @@ export const createRow = ({id, title, price, category, units, count}) => {
       svg.setAttribute('height', '20');
       const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
       useElement.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', svgImg);
-      svg.appendChild(useElement);
+      svg.append(useElement);
 
       const button = document.createElement('button');
       button.type = type;
@@ -69,17 +65,17 @@ export const createRow = ({id, title, price, category, units, count}) => {
 
   const buttonGroup = createButtonsGroup([
     {
-      className: 'table__button',
+      className: 'table__button table__button_add-img',
       type: 'button',
       svgImg: '/img/sprite.svg#no-image',
     },
     {
-      className: 'table__button',
+      className: 'table__button table__button_edit',
       type: 'button',
       svgImg: '/img/sprite.svg#edit',
     },
     {
-      className: 'table__button',
+      className: 'table__button table__button_delete',
       type: 'button',
       svgImg: '/img/sprite.svg#delete',
     },

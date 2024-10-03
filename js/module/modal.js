@@ -1,19 +1,15 @@
-export const modalBtn = (addTableBtn, formOverlay, modal, modalClose) => {
+export const modalBtn = (addTableBtn, formOverlay) => {
 
   addTableBtn.addEventListener('click', () => {
     formOverlay.classList.add('overlay_active');
   });
 
-  modal.addEventListener('click', event => {
-    event.stopPropagation();
-  });
+  formOverlay.addEventListener('click', e => {
+    const target = e.target;
 
-  formOverlay.addEventListener('click', () => {
-    formOverlay.classList.remove('overlay_active');
-  });
-
-  modalClose.addEventListener('click', () => {
-    formOverlay.classList.remove('overlay_active');
+    if (target === formOverlay ||
+        target.closest('.modal-header__close')) {
+          formOverlay.classList.remove('overlay_active');
+    }
   });
 };
-

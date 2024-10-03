@@ -11,7 +11,16 @@ const init = () => {
   const output = elements.table;
   totalTablePrice(data);
   renderGoods(output, data);
-  modalBtn(elements.addBtn, elements.modalOverlay, elements.modal, elements.modalClose);
+  modalBtn(elements.addBtn, elements.modalOverlay);
+
+  elements.table.addEventListener('click', e => {
+    const target = e.target;
+    if (target.closest('.table__button_delete')) {
+      target.closest('.table__row').remove();
+      
+      console.log(data);
+    }
+  });
 };
 
 init();
