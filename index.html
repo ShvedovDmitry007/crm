@@ -33,45 +33,45 @@
             
             <div class="group group_name">
               <label for="name" class="product__label" >Наименование</label>
-              <input id="name" class="product__input product__input_name" type="text" required="" name="product-name">
+              <input id="name" class="product__input product__input_name" type="text" name="title" required>
             </div>
   
             <div class="group group_category">
               <label for="category" class="product__label" >Категория</label>
-              <input id="category" class="product__input product__input_category" type="text" required="" name="product-category">
+              <input id="category" class="product__input product__input_category" type="text" name="category" required>
             </div>
   
             <div class="group groupunits">
               <label for="units" class="product__label" >Единицы измерения</label>
-              <input id="units" class="product__input product__input_units" type="text" required="" name="product-units">
+              <input id="units" class="product__input product__input_units" type="text" name="units" required>
             </div>
   
             <div class="group group_discount">
               <label for="input-checkbox" class="product__label">Дисконт</label>
               <div class="product__box discount"> 
                 <input id="input-checkbox" class="product__checkbox discount__checkbox" type="checkbox">
-                <input class="product__input discount__input" type="text" name="product-discont" disabled>
+                <input class="product__input discount__input" type="text" name="discont" disabled>
               </div>
             </div>
   
             <div class="group group_description">
               <label for="description" class="product__label" >Описание</label>
-              <textarea id="description" class="product__input product__input_text-area" name="product-description"  cols="30" rows="10"></textarea>
+              <textarea id="description" class="product__input product__input_text-area" name="description"  cols="30" rows="10" required></textarea>
             </div>
   
             <div class="group group_count">
               <label for="count" class="product__label" >Количество</label>
-              <input id="count" class="product__input product__input_count" type="number" required="" name="product-count">
+              <input id="count" class="product__input product__input_count" type="number" name="count" required>
             </div>
   
             <div class="group group_price">
               <label for="price" class="product__label" >Цена</label>
-              <input id="price" class="product__input product__input_price" type="number" required="" name="product-price">
+              <input id="price" class="product__input product__input_price" type="number" name="price" required>
             </div>
   
             <div class="group group_file">
               <label for="file" class="product__image-label">Добавить изображение</label>
-              <input id="file" class="product__image-input" type="file" name="product-file">
+              <input id="file" class="product__image-input" type="file" name="file">
             </div>
             
             <p class="product__size">Изображение не должно превышать размер 1 Мб</p>
@@ -124,7 +124,7 @@
       <div class="cms__header header">
         <h1 class="header__name">Cms</h1>
 
-        <p class="header__result result">Итоговая стоимость: <span class="header__cost cost">$ 900.00</span></p>
+        <p class="header__result result">Итоговая стоимость: <span class="header__cost cost"></span></p>
       </div>
       
       <div class="table-scroll">

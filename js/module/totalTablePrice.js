@@ -8,6 +8,5 @@ export const totalTablePrice = (obj) => {
   const totalPrice = document.querySelector('.header__cost');
   totalPrice.innerHTML = `${total} ₽`;
   
-  return totalPrice;
+  return total;
 };
-

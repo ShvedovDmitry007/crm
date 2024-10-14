@@ -56,3 +56,7 @@ export const initialData = [
     }
   },
 ]
+
+export const addDataProduct = (product) => {
+  initialData.push(product);
+}; 

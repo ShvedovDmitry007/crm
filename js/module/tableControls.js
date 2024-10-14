@@ -1,7 +1,10 @@
 import { deleteProductFromData } from "./deleteProductFromData.js";
+import { renderApp } from "./renderApp.js";
+import { totalTablePrice } from "./totalTablePrice.js";
 
 //Создаем функцию. Принимает в себя элементы страницы и данные
-export const tableControls = (elements, data) => {
+export const tableControls = (data) => {
+  const elements = renderApp();
 
   // Событие клика вешаем на родителя и дальше проверяем источник клика
   elements.table.addEventListener('click', e => {
@@ -21,10 +24,10 @@ export const tableControls = (elements, data) => {
 
       // Удаляем товар из базы
       deleteProductFromData(productId, data);
+      totalTablePrice(data); // и пересчитываем общую стоимость;
 
       //Проверка данных
       console.log(`data`, data);
-      
     }
   });
 };

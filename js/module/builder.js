@@ -38,7 +38,6 @@ export const createRow = ({id, title, price, category, units, count}) => {
     btnGroup.classList.add('table__cell', 'btn-group');
 
     const btns = params.map(({className, type, svgImg}) => {
-
       // Добавляем элемент <svg>
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       svg.setAttribute('width', '20');
