@@ -1,13 +1,11 @@
 import { deleteProductFromData } from "./deleteProductFromData.js";
-import { renderApp } from "./renderApp.js";
-import { totalTablePrice } from "./totalTablePrice.js";
+import { renderTotalSum } from "./renderTotalSum.js";
 
 //Создаем функцию. Принимает в себя элементы страницы и данные
-export const tableControls = (data) => {
-  const elements = renderApp();
+export const tableControls = ({tableBody, allProductsCost}, data) => {
 
   // Событие клика вешаем на родителя и дальше проверяем источник клика
-  elements.table.addEventListener('click', e => {
+  tableBody.addEventListener('click', e => {
     const target = e.target;
 
     // Если кнопка "Удалить", то ищем айди товара по которому был клик, то есть по какому ряду,
@@ -24,7 +22,8 @@ export const tableControls = (data) => {
 
       // Удаляем товар из базы
       deleteProductFromData(productId, data);
-      totalTablePrice(data); // и пересчитываем общую стоимость;
+      // и пересчитываем общую стоимость;
+      renderTotalSum(data, {allProductsCost}); 
 
       //Проверка данных
       console.log(`data`, data);

@@ -1,4 +1,12 @@
-export const createRow = ({id, title, price, category, units, count}) => {
+export const createRow = ({id, title, price, category, units, count, discont}) => {
+  //Получили все поля нашего товара начинаем с ними работать,более того 
+  //проверяем есть ли скидка, учитываем ее
+  if (discont === false) {
+    discont = 0;
+  }
+  let sum = price * count;
+  sum -= (sum * discont) / 100;
+
   const row = document.createElement('tr');
   row.classList.add('table__row');
   row.setAttribute('data-id', id);
@@ -29,15 +37,14 @@ export const createRow = ({id, title, price, category, units, count}) => {
 
   const cellTotalPrice = document.createElement('td');
   cellTotalPrice.classList.add('table__cell', 'table__cell_total-price');
-  cellTotalPrice.innerHTML = `${count * price} ₽`;
+  cellTotalPrice.innerHTML = `${sum} ₽`;
 
   //Кнопки
-
   const createButtonsGroup = params => {
     const btnGroup = document.createElement('td');
     btnGroup.classList.add('table__cell', 'btn-group');
 
-    const btns = params.map(({className, type, svgImg}) => {
+    const btns = params.map(({ className, type, svgImg }) => {
       // Добавляем элемент <svg>
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       svg.setAttribute('width', '20');

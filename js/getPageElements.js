@@ -16,6 +16,7 @@ export const getPageElements = () => {
   const btnAddImage = document.querySelector('.product__image-input');
   const modalAddProduct = document.querySelector('.modal-footer__add-product');
   const newProductTotalPrice = document.querySelector('.modal-footer__cost');
+  const allProductsCost = document.querySelector('.header__cost');
 
   // Таблица
   const tableBody = document.querySelector('.table__body');
@@ -40,5 +41,6 @@ export const getPageElements = () => {
     newProductTotalPrice,
     tableBody,
     addProduct,
+    allProductsCost
   };
 };
