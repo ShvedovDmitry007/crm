@@ -3,7 +3,6 @@ import { renderTotalSum } from "./renderTotalSum.js";
 
 export const renderGoods = (elements, data = []) => {
   const output = elements.tableBody;
-
   data.map(item => {
     output.append(
       createRow({
