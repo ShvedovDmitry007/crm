@@ -16,5 +16,6 @@ export const renderGoods = (elements, data = []) => {
       })
     );
   });
+  
   renderTotalSum(data, elements);
 };

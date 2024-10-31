@@ -1,13 +1,11 @@
-// 'use strict';
-// import { initialData } from "./data.js";
+import { initialData } from "./data.js";
 import { renderGoods } from "./module/renderGoods.js";
 import { tableControls } from "./module/tableControls.js";
 import { getPageElements } from './getPageElements.js';
 import { overlayControls } from "./module/overlayControls.js";
-import { getStorage } from "./module/storageAction.js";
 
 const init = () => {
-  const data = getStorage('goods');
+  const data = initialData;
   const elements = getPageElements();
   console.log(data);
 

@@ -1,7 +1,6 @@
 import { createRow } from "./builder.js";
 import { randomId } from "./randomId.js";
 import { renderTotalSum } from "./renderTotalSum.js";
-import { setStorage } from "./storageAction.js";
 
 const addToBase = (elements, data) => {
     const formData = new FormData(elements.modalForm);
@@ -19,7 +18,6 @@ const addToBase = (elements, data) => {
 
     data.push(newProduct);
     elements.tableBody.append(createRow(newProduct));
-    setStorage('goods', JSON.stringify(product));
     renderTotalSum(data,elements);
 };
 export default addToBase;
