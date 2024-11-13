@@ -1,9 +1,8 @@
 export const createRow = ({id, title, price, category, units, count, discont}) => {
-  //Получили все поля нашего товара начинаем с ними работать,более того 
-  //проверяем есть ли скидка, учитываем ее
   if (discont === false) {
     discont = 0;
   }
+  
   let sum = price * count;
   sum -= (sum * discont) / 100;
 

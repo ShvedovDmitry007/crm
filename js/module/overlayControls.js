@@ -17,19 +17,19 @@ export const overlayControls = (elements, data) => {
   const initialFormState = () => {
     discountInput.setAttribute("disabled", "disabled");
     discountInput.value = '';
-  }
+  };
 
   //Открытие модалки
   const openModal = () => {
     modalOverlay.classList.add('overlay_active');
     initialFormState();
-  }
+  };
 
   //Закрытие модалки   
   const closeModal = () => {
     modalOverlay.classList.remove('overlay_active');
     modalForm.reset();
-  }
+  };
 
   //Слушаем клики
   //Изменение состояния галочки
@@ -39,10 +39,9 @@ export const overlayControls = (elements, data) => {
       discountInput.value = 0;
     } else {
       productCost(elements);
-      //Убрали галочку? Вернули исходное состояние
       initialFormState();
     }
-  })
+  });
 
   //Слушаем изменения в форме , быстро пересчитываем сумму товара
   discountInput.addEventListener('change', () => {
@@ -72,6 +71,5 @@ export const overlayControls = (elements, data) => {
     e.preventDefault();
     addToBase(elements, data);
     closeModal();
-  })
-
-}
+  });
+};
