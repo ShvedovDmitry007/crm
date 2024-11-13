@@ -55,6 +55,12 @@ export const createRow = ({id, title, price, category, units, count, discont}) =
       const button = document.createElement('button');
       button.type = type;
       button.className = className;
+
+      if (button.className === 'table__button table__button_add-img') {
+        const pic = '/img/product.png';
+        button.setAttribute('data-pic', pic);
+      }
+
       button.append(svg);
 
       return button;

@@ -16,5 +16,18 @@ export const tableControls = ({tableBody, allProductsCost}, data) => {
       //Проверка данных
       console.log(`data`, data);
     }
+
+    if (target.closest('.table__button_add-img')) {
+      const imageId = target.closest('.table__button_add-img').getAttribute("data-pic");      
+      const openImage = open('about:blank', '', 'popup');
+      openImage.document.title = 'Тестовое изображение';
+      openImage.document.body.innerHTML = `<img src="${imageId}">`;
+      const screenWidth = screen.width;
+      const screenHeight = screen.height;
+      const top = (screenHeight - 600) / 2;
+      const left = (screenWidth - 600) / 2;
+      openImage.resizeTo(600, 600);
+      openImage.moveTo(left, top);
+    }
   });
 };
