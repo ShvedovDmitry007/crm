@@ -1,4 +1,6 @@
 export const createRow = ({id, title, price, category, units, count, discont, images}) => {
+  console.log('images: ', images);
+
   if (discont === false) {
     discont = 0;
   }
@@ -9,6 +11,7 @@ export const createRow = ({id, title, price, category, units, count, discont, im
   const row = document.createElement('tr');
   row.classList.add('table__row');
   row.setAttribute('data-id', id);
+  row.dataset.image = `./img/product/${id}.jpg`
 
   const cellId = document.createElement('td');
   cellId.classList.add('table__cell', 'table__cell_id');
@@ -55,12 +58,6 @@ export const createRow = ({id, title, price, category, units, count, discont, im
       const button = document.createElement('button');
       button.type = type;
       button.className = className;
-
-      if (button.className === 'table__button table__button_add-img') {
-        const pic = images.big;
-        button.setAttribute('data-pic', pic);
-      }
-
       button.append(svg);
 
       return button;
