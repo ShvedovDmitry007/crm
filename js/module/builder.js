@@ -1,4 +1,4 @@
-export const createRow = ({id, title, price, category, units, count, discont}) => {
+export const createRow = ({id, title, price, category, units, count, discont, images}) => {
   if (discont === false) {
     discont = 0;
   }
@@ -57,7 +57,7 @@ export const createRow = ({id, title, price, category, units, count, discont}) =
       button.className = className;
 
       if (button.className === 'table__button table__button_add-img') {
-        const pic = '/img/product.png';
+        const pic = images.big;
         button.setAttribute('data-pic', pic);
       }
 

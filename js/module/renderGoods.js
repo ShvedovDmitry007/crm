@@ -13,6 +13,7 @@ export const renderGoods = (elements, data = []) => {
         units: item.units,
         count: item.count,
         discont: item.discont,
+        images: item.images,
       })
     );
   });

@@ -18,10 +18,20 @@ export const tableControls = ({tableBody, allProductsCost}, data) => {
     }
 
     if (target.closest('.table__button_add-img')) {
-      const imageId = target.closest('.table__button_add-img').getAttribute("data-pic");      
+      const imageId = target.closest('.table__button_add-img').getAttribute("data-pic");
+      
       const openImage = open('about:blank', '', 'popup');
       openImage.document.title = 'Тестовое изображение';
-      openImage.document.body.innerHTML = `<img src="${imageId}">`;
+
+      const img = openImage.document.createElement('img');
+      img.src = imageId;
+      openImage.document.body.append(img);
+
+      img.style.position = 'absolute';
+      img.style.top = '50%';
+      img.style.left = '50%';
+      img.style.transform = 'translate(-50%, -50%)';
+
       const screenWidth = screen.width;
       const screenHeight = screen.height;
       const top = (screenHeight - 600) / 2;

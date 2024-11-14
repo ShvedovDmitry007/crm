@@ -9,8 +9,8 @@ export const initialData = [
     "count": 3,
     "units": "шт",
     "images": {
-      "small": "img/smrtxiaomi11t-m.jpg",
-      "big": "img/smrtxiaomi11t-b.jpg"
+      "small": "img/product/smrtxiaomi11t-m.jpg",
+      "big": "img/product/smrtxiaomi11t-b.jpg"
     }
   },
   {
@@ -23,8 +23,8 @@ export const initialData = [
     "count": 1,
     "units": "шт",
     "images": {
-      "small": "img/cheetancar-m.jpg",
-      "big": "img/cheetancar-b.jpg"
+      "small": "img/product/cheetancar-m.jpg",
+      "big": "img/product/cheetancar-b.jpg"
     }
   },
   {
@@ -37,8 +37,8 @@ export const initialData = [
     "count": 4,
     "units": "шт",
     "images": {
-      "small": "img/tvboxmecool-m.jpg",
-      "big": "img/tvboxmecool-b.jpg"
+      "small": "img/product/tvboxmecool-m.jpg",
+      "big": "img/product/tvboxmecool-b.jpg"
     }
   },
   {
@@ -51,8 +51,8 @@ export const initialData = [
     "count": 420,
     "units": "v",
     "images": {
-      "small": "img/lan_proconnect43-3-25.jpg",
-      "big": "img/lan_proconnect43-3-25-b.jpg"
+      "small": "img/product/lan_proconnect43-3-25.jpg",
+      "big": "img/product/lan_proconnect43-3-25-b.jpg"
     }
   },
 ]
